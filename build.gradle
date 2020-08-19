@@ -1,9 +1,15 @@
 subprojects{
     apply plugin: 'java'
+    repositories {
+        mavenCentral()
+        mavenLocal()
+    }
 }
 
-
 project(':common') {
+    dependencies{
+        testCompile group: 'junit', name: 'junit', version: '4.12'
+    }
 }
 
 project(':server-core') {
@@ -11,3 +17,4 @@ project(':server-core') {
 
 project(':tracker-core') {
 }
+
